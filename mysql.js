@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-
+const fs = require('fs');
 const connection = mysql.createConnection({
 host : 'localhost',
 user : 'nodejs',
@@ -14,9 +14,9 @@ connection.connect();
     console.log(error);
   }
   console.log(results);
-  // fs.writeFileSync("results.JSON",JSON.stringify(results,null,2), "utf8");
+  fs.writeFileSync("results.JSON",JSON.stringify(results,null,2), "utf8");
 
 });
-//  fs.writeFileSync("a.JSON",JSON.stringify(members,null,2), "utf8");
+//  fs.writeFileSync("mebers.JSON",JSON.stringify(members,null,2), "utf8");
 connection.end();
 
